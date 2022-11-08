@@ -1,0 +1,47 @@
+server:
+  port: '8027'
+
+logging:
+  level:
+    root: info
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://localhost:5532/productSearchDb
+    username: productSearchDbUser
+    password: productSearchDbPassword
+  flyway:
+    user: "${spring.datasource.username}"
+    password: "${spring.datasource.password}"
+    url: "${spring.datasource.url}"
+    baselineOnMigrate: true
+
+app:
+  search:
+    ingestion:
+      test-data-file: products.json
+    facets-size: 100
+    fuzzinessValue: "AUTO:2,100"
+    query-boost-fields: '{
+                            codeBoost: 30.0,
+                            nameBoost: 20.0,
+                            descriptionBoost: 1.0,
+                            fuzzinessBoost: 5.0,
+                            wildcardBoost: 3.0,
+                            colorBoost:25.0,
+                            brandBoost:25.0,
+                            departmentBoost:25.0
+                          }'
+  opensearch:
+    username: ${OPENSEARCH_USERNAME}
+    host: localhost
+    password: ${OPENSEARCH_PASSWORD}
+    port: '9200'
+    index-name: product-catalog-index-v1
+    index-source: product-catalog-index-source.json
