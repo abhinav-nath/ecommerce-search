@@ -1,0 +1,22 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.home_panelList-wrap, .home_panel-wrap,.home_content-wrap {
+    overflow-y: auto;
+}
+
+.home_panelList-wrap {
+    display: flex;
+    flex: 1;
+}
+
+.home_panel-wrap {
+    flex-basis: 280px;
+}
+
+.home_content-wrap {
+    flex: 1;
+}
