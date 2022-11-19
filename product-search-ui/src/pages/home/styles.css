@@ -1,22 +1,13 @@
-.home {
+.sui-layout {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-.home_panelList-wrap, .home_panel-wrap,.home_content-wrap {
-    overflow-y: auto;
-}
-
-.home_panelList-wrap {
-    display: flex;
-    flex: 1;
-}
-
-.home_panel-wrap {
-    flex-basis: 280px;
-}
-
-.home_content-wrap {
-    flex: 1;
+/**
+ * Header / Searchbox
+ */
+.sui-layout-header {
+    padding: 32px 24px;
+    border-bottom: 1px solid #eeeeee;
 }

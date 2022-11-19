@@ -6,8 +6,10 @@ import './styles.css';
 
 const Home = () => {
   return (
-    <div className="home">
-      <SearchBar />
+    <div className="sui-layout">
+      <div className="sui-layout-header">
+        <SearchBar />
+      </div>
       <div className="home_panelList-wrap">
         <div className="home_panel-wrap">
           <SidePanel />
