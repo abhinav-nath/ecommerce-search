@@ -5,7 +5,6 @@ import { SearchResultsContext } from "../../../contexts/SearchResultsContext";
 
 const Content = () => {
   const { results } = useContext(SearchResultsContext);
-  console.log("Content - " + results.totalResults);
 
   if (results.totalResults > 0)
     return (
