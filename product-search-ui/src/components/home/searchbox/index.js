@@ -18,18 +18,16 @@ const SearchBox = () => {
   };
 
   return (
-    <form role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="downshift-0-label">
-      <div className="sui-search-box">
-        <div className="sui-search-box__wrapper">
-          <input
-            className="sui-search-box__text-input"
-            value={term}
-            onChange={(e) => setTerm(e.target.value)}
-            placeholder="Search" />
-        </div>
-        <input type="submit" className="button sui-search-box__submit" value="Search" onSubmit={searchText} />
+    <div className="sui-search-box">
+      <div className="sui-search-box__wrapper">
+        <input
+          className="sui-search-box__text-input"
+          value={term}
+          onChange={(e) => setTerm(e.target.value)}
+          placeholder="Search" />
       </div>
-    </form>
+      <button className="button sui-search-box__submit" onClick={searchText}>Search</button>
+    </div>
   );
 };
 
