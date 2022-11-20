@@ -1,0 +1,254 @@
+/**
+ * Main / Results
+ */
+.sui-layout-main {
+    width: 76%;
+    padding: 32px 0 32px 32px;
+}
+
+@media (max-width: 800px) {
+    .sui-layout-main {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+.sui-layout-main-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sui-layout-main-header__inner {
+    font-size: 12px;
+    color: #4a4b4b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sui-layout-main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sui-paging {
+}
+
+.sui-paging > li {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.sui-paging .rc-pagination-disabled a {
+    color: #ccc;
+    opacity: 0.5;
+}
+
+.sui-paging .rc-pagination-item a {
+    color: #3a56e4;
+    text-decoration: none;
+}
+
+.sui-paging .rc-pagination-item:hover {
+    background: #f8f8f8;
+}
+
+.sui-paging .rc-pagination-item:hover a {
+    color: #3a56e4;
+    text-decoration: none;
+}
+
+.sui-paging .rc-pagination-item-active a {
+    color: #4f4f4f;
+    font-weight: 700;
+}
+
+.sui-paging .rc-pagination-item-active:hover {
+    background: transparent;
+    cursor: not-allowed;
+}
+
+.sui-paging .rc-pagination-item-active:hover a {
+    color: #4f4f4f;
+    cursor: not-allowed;
+}
+
+.sui-paging .rc-pagination-next:hover {
+    background: #f8f8f8;
+}
+
+.sui-paging .rc-pagination-next:hover a {
+    color: #3a56e4;
+}
+
+.sui-paging .rc-pagination-jump-next:hover {
+    background: #f8f8f8;
+}
+
+.sui-paging .rc-pagination-jump-next:hover a {
+    color: #3a56e4;
+}
+
+.sui-paging .rc-pagination-jump-next:hover:after {
+    color: #3a56e4;
+    content: "\BB";
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.sui-paging .rc-pagination-jump-prev:hover {
+    background: #f8f8f8;
+}
+
+.sui-paging .rc-pagination-jump-prev:hover a {
+    color: #3a56e4;
+}
+
+.sui-paging .rc-pagination-jump-prev:hover:after {
+    color: #3a56e4;
+    content: "\AB";
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.sui-paging-info {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #4a4b4b;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.sui-result {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    list-style: none;
+    padding: 24px 0;
+    text-decoration: none;
+    display: block;
+    border: 1px solid #f0f0f0;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.sui-result + .sui-result {
+    margin-top: 32px;
+}
+
+.sui-result em {
+    position: relative;
+    color: #3a56e4;
+    font-weight: 700;
+    font-style: inherit;
+}
+
+.sui-result em:after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background: rgba(37, 139, 248, 0.08);
+    pointer-events: none;
+}
+
+.sui-result__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.sui-result__title {
+    font-size: 1.8em;
+    font-weight: 400;
+    color: #333333;
+    text-decoration: none;
+}
+
+.sui-result__title-link {
+    color: #3a56e4;
+    text-decoration: none;
+}
+
+.sui-result__key {
+    font-family: monospace;
+    font-weight: 400;
+    font-size: 14px;
+    flex: 0 1 50%;
+    color: #777777;
+}
+
+.sui-result__key:before {
+    content: '"';
+}
+
+.sui-result__key:after {
+    content: '": ';
+}
+
+.sui-result__value {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.sui-result__version {
+    font-size: 12px;
+    display: inline;
+    vertical-align: bottom;
+}
+
+.sui-result__license {
+    font-size: 12px;
+    color: #999999;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    line-height: 1;
+    padding: 4px 4px 3px 4px;
+}
+
+.sui-result__body {
+    line-height: 1.5;
+    margin-top: 0;
+    display: flex;
+}
+
+.sui-result__body p {
+    margin: 0;
+}
+
+.sui-result__image {
+    padding-top: 12px;
+    padding-left: 24px;
+    flex-basis: 220px;
+}
+
+.sui-result__image img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.sui-result__details {
+    flex: 1;
+    list-style: none;
+    padding: 12px 24px;
+    margin: 0;
+}
+
+.sui-results-container {
+    padding: 0;
+    list-style: none;
+}

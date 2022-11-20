@@ -11,3 +11,43 @@
     padding: 32px 24px;
     border-bottom: 1px solid #eeeeee;
 }
+
+/**
+ * Body
+ */
+.sui-layout-body {
+    background: #fcfcfc;
+}
+
+.sui-layout-body:after {
+    content: "";
+    height: 80px;
+    width: 100%;
+    display: block;
+    position: relative;
+    background: -moz-linear-gradient(top, #fcfcfc 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(top, #fcfcfc 0%, #ffffff 100%);
+    background: linear-gradient(to bottom, #fcfcfc 0%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#ffffff', GradientType=0);
+}
+
+@media (max-width: 800px) {
+    .sui-layout-body:after {
+        display: none;
+    }
+}
+
+.sui-layout-body__inner {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    padding: 0 24px;
+}
+
+@media (max-width: 800px) {
+    .sui-layout-body__inner {
+        display: block;
+        padding: 0 15px;
+    }
+}

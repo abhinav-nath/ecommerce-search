@@ -1,14 +1,9 @@
-*, *::before, *::after {
-    margin: 0;
+html {
+    box-sizing: border-box;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
