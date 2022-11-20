@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import "./styles.css";
-import SearchService from "../../../api/SearchService";
+import { SearchResultsContext } from "../../../contexts/SearchResultsContext";
 import axios from "axios";
 
 const SearchBox = (props) => {
   const [term, setTerm] = useState("");
-  const [results, setResults] = useState([]);
 
-  const searchText = async (page) => {
+  const { setResults } = useContext(SearchResultsContext);
+
+  const searchText = async () => {
     const res = await axios.get("http://localhost:8027/v1/search", {
       params: {
         query: term,

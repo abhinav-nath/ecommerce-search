@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./styles.css";
 import "../../../../node_modules/rc-pagination/assets/index.css";
+import { SearchResultsContext } from "../../../contexts/SearchResultsContext";
 
 const Content = () => {
+  const { results } = useContext(SearchResultsContext);
+  console.log("Content - " + results.totalResults)
+
   return (
     <div className="sui-layout-main">
       <div className="sui-layout-main-header">
         <div className="sui-layout-main-header__inner">
           <div className="sui-paging-info">
-            Showing <strong>1 - 20</strong> out of{" "} <strong>59</strong>
+            Total results: <strong>{results.totalResults}</strong>
           </div>
         </div>
       </div>
