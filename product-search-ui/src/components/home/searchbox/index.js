@@ -3,14 +3,16 @@ import "./styles.css";
 import SearchService from "../../../api/SearchService";
 import axios from "axios";
 
-const SearchBox = () => {
+const SearchBox = (props) => {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
 
-  const searchText = async () => {
+  const searchText = async (page) => {
     const res = await axios.get("http://localhost:8027/v1/search", {
       params: {
-        query: term
+        query: term,
+        page: props.page,
+        pageSize: 5
       }
     });
     console.log(res.data);
