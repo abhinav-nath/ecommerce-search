@@ -8,23 +8,35 @@ const SideBar = () => {
   if (results.totalResults > 0)
     return (
       <div className="sui-layout-sidebar">
-        <div>
-          <fieldset className="sui-facet">
-            <legend className="sui-facet__title">States</legend>
-            <div className="sui-facet-search">
-              <input className="sui-facet-search__text-input" type="search" placeholder="Filter states.keyword" />
+        <div className="sui-facet-container">
+          {results.facets.map((facet) => (
+            <div key={facet.code}>
+              <fieldset className="sui-facet">
+                <legend className="sui-facet__title">{facet.name}</legend>
+                {facet.facetValues.map((facetValue) => (
+                  <div key={facetValue.name}>
+                    <div className="sui-multi-checkbox-facet">
+                      <label className="sui-multi-checkbox-facet__option-label">
+                        <div className="sui-multi-checkbox-facet__option-input-wrapper">
+                          <input
+                            key={facetValue.name}
+                            type={"checkbox"}
+                            className="sui-multi-checkbox-facet__checkbox"
+                          />
+                          <span className="sui-multi-checkbox-facet__input-text">
+              {facetValue.name}
+            </span>
+                        </div>
+                        <span className="sui-multi-checkbox-facet__option-count">
+            {facetValue.count}
+          </span>
+                      </label>
+                    </div>
+                  </div>
+                ))}
+              </fieldset>
             </div>
-            <div className="sui-multi-checkbox-facet">
-              <label htmlFor="example_facet_StatesCalifornia" className="sui-multi-checkbox-facet__option-label">
-                <div className="sui-multi-checkbox-facet__option-input-wrapper">
-                  <input id="example_facet_StatesCalifornia" type="checkbox"
-                         className="sui-multi-checkbox-facet__checkbox" />
-                  <span className="sui-multi-checkbox-facet__input-text">California</span>
-                </div>
-                <span className="sui-multi-checkbox-facet__option-count">9</span>
-              </label>
-            </div>
-          </fieldset>
+          ))}
         </div>
       </div>
     );
