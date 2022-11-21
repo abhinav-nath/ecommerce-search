@@ -38,11 +38,11 @@ const Home = () => {
             </div>
           </div>
           <div className="sui-layout-main-footer">
-            <Pagination current={currentPage}
-                        pageSize={pageSize}
-                        onChange={PaginationChange}
-                        onShowSizeChange={PerPageChange}
-                        total={results.totalResults} />
+            {results.totalResults && (<Pagination current={currentPage}
+                                     pageSize={pageSize}
+                                     onChange={PaginationChange}
+                                     onShowSizeChange={PerPageChange}
+                                     total={results.totalResults} />)}
           </div>
         </div>
       </SearchResultsContext.Provider>
