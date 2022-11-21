@@ -8,10 +8,10 @@ const Content = () => {
 
   if (results.totalResults > 0)
     return (
-      <div className="sui-layout-main">
+      <>
         <div className="sui-layout-main-header">
           <div className="sui-layout-main-header__inner">
-            <div className="sui-paging-info">
+            <div>
               Total Results - <strong>{results.totalResults}</strong>
             </div>
           </div>
@@ -30,7 +30,7 @@ const Content = () => {
             ))}
           </ul>
         </div>
-      </div>
+      </>
     );
 };
 

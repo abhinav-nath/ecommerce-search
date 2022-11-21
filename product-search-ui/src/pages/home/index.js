@@ -34,15 +34,17 @@ const Home = () => {
           <div className="sui-layout-body">
             <div className="sui-layout-body__inner">
               <SideBar />
-              <Content />
+              <div className="sui-layout-main">
+                <Content />
+                <div className="sui-layout-main-footer">
+                  {results.totalResults && (<Pagination current={currentPage}
+                                                        pageSize={pageSize}
+                                                        onChange={PaginationChange}
+                                                        onShowSizeChange={PerPageChange}
+                                                        total={results.totalResults} />)}
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="sui-layout-main-footer">
-            {results.totalResults && (<Pagination current={currentPage}
-                                     pageSize={pageSize}
-                                     onChange={PaginationChange}
-                                     onShowSizeChange={PerPageChange}
-                                     total={results.totalResults} />)}
           </div>
         </div>
       </SearchResultsContext.Provider>

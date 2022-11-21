@@ -13,6 +13,21 @@
 }
 
 /**
+ * Main / Results
+ */
+.sui-layout-main {
+    width: 76%;
+    padding: 32px 0 32px 32px;
+}
+
+@media (max-width: 800px) {
+    .sui-layout-main {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+/**
  * Body
  */
 .sui-layout-body {
@@ -56,94 +71,4 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-
-.sui-paging {
-}
-
-.sui-paging > li {
-    border: none;
-    background: transparent;
-    outline: none;
-}
-
-.sui-paging .rc-pagination-disabled a {
-    color: #ccc;
-    opacity: 0.5;
-}
-
-.sui-paging .rc-pagination-item a {
-    color: #3a56e4;
-    text-decoration: none;
-}
-
-.sui-paging .rc-pagination-item:hover {
-    background: #f8f8f8;
-}
-
-.sui-paging .rc-pagination-item:hover a {
-    color: #3a56e4;
-    text-decoration: none;
-}
-
-.sui-paging .rc-pagination-item-active a {
-    color: #4f4f4f;
-    font-weight: 700;
-}
-
-.sui-paging .rc-pagination-item-active:hover {
-    background: transparent;
-    cursor: not-allowed;
-}
-
-.sui-paging .rc-pagination-item-active:hover a {
-    color: #4f4f4f;
-    cursor: not-allowed;
-}
-
-.sui-paging .rc-pagination-next:hover {
-    background: #f8f8f8;
-}
-
-.sui-paging .rc-pagination-next:hover a {
-    color: #3a56e4;
-}
-
-.sui-paging .rc-pagination-jump-next:hover {
-    background: #f8f8f8;
-}
-
-.sui-paging .rc-pagination-jump-next:hover a {
-    color: #3a56e4;
-}
-
-.sui-paging .rc-pagination-jump-next:hover:after {
-    color: #3a56e4;
-    content: "\BB";
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.sui-paging .rc-pagination-jump-prev:hover {
-    background: #f8f8f8;
-}
-
-.sui-paging .rc-pagination-jump-prev:hover a {
-    color: #3a56e4;
-}
-
-.sui-paging .rc-pagination-jump-prev:hover:after {
-    color: #3a56e4;
-    content: "\AB";
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.sui-paging-info {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-    color: #4a4b4b;
-    font-size: 12px;
-    display: inline-block;
 }

@@ -1,18 +1,3 @@
-/**
- * Main / Results
- */
-.sui-layout-main {
-    width: 76%;
-    padding: 32px 0 32px 32px;
-}
-
-@media (max-width: 800px) {
-    .sui-layout-main {
-        width: 100%;
-        padding-left: 0;
-    }
-}
-
 .sui-layout-main-header {
     display: flex;
     width: 100%;
