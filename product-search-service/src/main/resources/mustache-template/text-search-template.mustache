@@ -138,7 +138,7 @@
                 {{#aggregationFilters}}
                   {
                     "terms": {
-                    "{{code}}": {{#toJson}}values{{/toJson}}
+                    "{{code}}.raw": {{#toJson}}values{{/toJson}}
                     }
                   }
                   {{^last}},{{/last}}
