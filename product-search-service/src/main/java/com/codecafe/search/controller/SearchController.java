@@ -13,7 +13,7 @@ import com.codecafe.search.model.TextSearchResponse;
 import com.codecafe.search.service.SearchService;
 
 @Validated
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value = "/v1/search")
