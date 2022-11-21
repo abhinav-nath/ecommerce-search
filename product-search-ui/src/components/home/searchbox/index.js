@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./styles.css";
 import { SearchResultsContext } from "../../../contexts/SearchResultsContext";
 import axios from "axios";
@@ -9,16 +9,23 @@ const SearchBox = (props) => {
   const { setResults } = useContext(SearchResultsContext);
 
   const searchText = async () => {
+    console.log("inside searchText");
     const res = await axios.get("http://localhost:8027/v1/search", {
       params: {
         query: term,
         page: props.page,
-        pageSize: 5
+        pageSize: props.pageSize
       }
     });
     console.log(res.data);
     setResults(res.data);
   };
+
+  useEffect(() => {
+    if (term) {
+      searchText();
+    }
+  }, [props.page]);
 
   return (
     <div className="sui-search-box">

@@ -7,7 +7,20 @@ import { SearchResultsContext } from "../../contexts/SearchResultsContext";
 import Pagination from "rc-pagination";
 
 const Home = () => {
+  const pageSize = 5;
   const [results, setResults] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const PerPageChange = (value) => {
+    const newPerPage = Math.ceil(results.totalResults / value);
+    if (currentPage > newPerPage) {
+      setCurrentPage(newPerPage);
+    }
+  };
+
+  const PaginationChange = (currentPage) => {
+    setCurrentPage(currentPage);
+  };
 
   return (
     <>
@@ -15,7 +28,7 @@ const Home = () => {
         <div className="sui-layout">
           <div className="sui-layout-header">
             <div className="sui-layout-header__inner">
-              <SearchBox page={1} />
+              <SearchBox page={currentPage} pageSize={pageSize} />
             </div>
           </div>
           <div className="sui-layout-body">
@@ -25,7 +38,11 @@ const Home = () => {
             </div>
           </div>
           <div className="sui-layout-main-footer">
-            <Pagination current={1} pageSize={5} total={results.totalResults}/>
+            <Pagination current={currentPage}
+                        pageSize={pageSize}
+                        onChange={PaginationChange}
+                        onShowSizeChange={PerPageChange}
+                        total={results.totalResults} />
           </div>
         </div>
       </SearchResultsContext.Provider>
