@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./styles.css";
+import { SelectedFiltersContext } from "../../../contexts/SelectedFiltersContext";
 
 const FacetValue = (props) => {
-  const [checked, setChecked] = useState(false);
+  const { selectedFilters, setSelectedFilters } = useContext(SelectedFiltersContext);
 
-  const handleChange = () => {
-    setChecked(!checked);
+  const handleChange = (e) => {
+    const checked = e.target.checked;
+    if (checked) {
+      setSelectedFilters([...selectedFilters, { facetCode: props.facetCode, facetValue: props.facetValue.name }]);
+    } else {
+      setSelectedFilters(selectedFilters.filter((e) => (e.facetValue !== props.facetValue.name)));
+    }
   };
+
+  useEffect(() => {
+    console.log(JSON.stringify(selectedFilters));
+  }, [selectedFilters]);
 
   return (
     <div className="sui-multi-checkbox-facet">
       <label className="sui-multi-checkbox-facet__option-label">
         <div className="sui-multi-checkbox-facet__option-input-wrapper">
           <input
-            key={props.facetValue.name}
-            type={"checkbox"}
+            type="checkbox"
             className="sui-multi-checkbox-facet__checkbox"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e)}
           />
           <span className="sui-multi-checkbox-facet__input-text">
               {props.facetValue.name}

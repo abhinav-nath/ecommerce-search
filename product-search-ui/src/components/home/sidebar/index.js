@@ -6,7 +6,8 @@ import Facet from "./Facet";
 const SideBar = () => {
   const { results } = useContext(SearchResultsContext);
 
-  if (results.totalResults > 0)
+  if (results.totalResults > 0) {
+    console.log("Inside SideBar", JSON.stringify(results.facets));
     return (
       <div className="sui-layout-sidebar">
         <div className="sui-facet-container">
@@ -18,6 +19,7 @@ const SideBar = () => {
         </div>
       </div>
     );
+  }
 };
 
 export default SideBar;
