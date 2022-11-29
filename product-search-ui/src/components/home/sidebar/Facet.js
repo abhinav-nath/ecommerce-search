@@ -7,7 +7,7 @@ const Facet = (props) => {
     <fieldset className="sui-facet">
       <legend className="sui-facet__title">{props.facet.name}</legend>
       {props.facet.facetValues.map((facetValue) => (
-        <div key={facetValue.name}>
+        <div key={facetValue.name + new Date().getTime()}>
           <FacetValue facetCode={props.facet.code} facetValue={facetValue} />
         </div>
       ))}

@@ -14,34 +14,36 @@ const SearchBox = (props) => {
 
   const searchText = async (searchButtonClicked) => {
     if (searchButtonClicked) {
+      console.log("Search button clicked!");
       selectedFilters.current = [];
-    }
+    } else {
+      if (filterChecked) {
+        console.log("filterChecked", filterChecked);
+        if (!filterChecked.checked) {
+          let i = -1;
+          i = selectedFilters.current.findIndex((filter) => (filterChecked.facetCode === filter.code));
 
-    if (filterChecked) {
-      if (!filterChecked.checked) {
-        let i = -1;
-        i = selectedFilters.current.findIndex((filter) => (filterChecked.facetCode === filter.code));
-
-        if (i >= 0) {
-          if (selectedFilters.current[i].values.length === 1) {
-            selectedFilters.current.splice(i, 1);
-          } else {
-            for (const value of selectedFilters.current[i].values) {
-              if (filterChecked.facetValue === value) {
-                let x = selectedFilters.current[i].values.indexOf(value);
-                selectedFilters.current[i].values.splice(x, 1);
+          if (i >= 0) {
+            if (selectedFilters.current[i].values.length === 1) {
+              selectedFilters.current.splice(i, 1);
+            } else {
+              for (const value of selectedFilters.current[i].values) {
+                if (filterChecked.facetValue === value) {
+                  let x = selectedFilters.current[i].values.indexOf(value);
+                  selectedFilters.current[i].values.splice(x, 1);
+                }
               }
             }
           }
-        }
-      } else {
-        let j = -1;
-        j = selectedFilters.current.findIndex((filter) => (filterChecked.facetCode === filter.code));
-
-        if (j >= 0) {
-          selectedFilters.current[j].values.push(filterChecked.facetValue);
         } else {
-          selectedFilters.current.push({ code: filterChecked.facetCode, values: [filterChecked.facetValue] });
+          let j = -1;
+          j = selectedFilters.current.findIndex((filter) => (filterChecked.facetCode === filter.code));
+
+          if (j >= 0) {
+            selectedFilters.current[j].values.push(filterChecked.facetValue);
+          } else {
+            selectedFilters.current.push({ code: filterChecked.facetCode, values: [filterChecked.facetValue] });
+          }
         }
       }
     }
