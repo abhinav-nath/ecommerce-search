@@ -34,6 +34,9 @@ const Home = () => {
             <div className="sui-layout">
               <div className="sui-layout-header">
                 <div className="sui-layout-header__inner">
+                  {results.totalResults === 0 && <div className="alert alert-danger" role="alert">
+                    No Search Results Found!
+                  </div>}
                   <SearchBox page={currentPage} pageSize={pageSize} />
                 </div>
               </div>
@@ -42,13 +45,14 @@ const Home = () => {
                   <SideBar />
                   <div className="sui-layout-main">
                     <Content />
-                    <div className="sui-layout-main-footer">
-                      {results.totalResults && (<Pagination current={currentPage}
-                                                            pageSize={pageSize}
-                                                            onChange={PaginationChange}
-                                                            onShowSizeChange={PerPageChange}
-                                                            total={results.totalResults} />)}
-                    </div>
+                    {results.totalResults > 0 &&
+                      <div className="sui-layout-main-footer">
+                        <Pagination current={currentPage}
+                          pageSize={pageSize}
+                          onChange={PaginationChange}
+                          onShowSizeChange={PerPageChange}
+                          total={results.totalResults} />
+                      </div>}
                   </div>
                 </div>
               </div>
