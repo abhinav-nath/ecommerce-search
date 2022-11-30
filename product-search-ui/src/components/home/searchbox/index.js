@@ -14,7 +14,6 @@ const SearchBox = (props) => {
 
   const searchText = async (searchButtonClicked) => {
     if (searchButtonClicked) {
-      console.log("Search button clicked!");
       selectedFilters.current = [];
     } else {
       if (filterChecked) {
@@ -61,6 +60,22 @@ const SearchBox = (props) => {
       searchText(false);
     }
   }, [props.page, filterChecked]);
+
+  useEffect(() => {
+    const keyDownHandler = e => {
+
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchText(true);
+      }
+    };
+
+    document.addEventListener('keydown', keyDownHandler);
+
+    return () => {
+      document.removeEventListener('keydown', keyDownHandler);
+    };
+  });
 
   return (
     <div className="sui-search-box">
