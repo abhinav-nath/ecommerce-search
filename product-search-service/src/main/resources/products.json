@@ -270,5 +270,95 @@
     "description": "JBL PartyBox Encore Essential, Music Synced Strobe Lightshow, JBL PartyBox App 100 W Bluetooth Party Speaker (Black, Stereo Channel)",
     "color": "Black",
     "price": 24999
+  },
+  {
+    "code": "31",
+    "name": "Apple iPhone 14 Pro Max (128GB, Deep Purple)",
+    "department": "Mobile Phones",
+    "brand": "Apple",
+    "description": "Apple iPhone 14 Pro Max (128GB, Deep Purple)",
+    "color": "Deep Purple",
+    "price": 139900
+  },
+  {
+    "code": "32",
+    "name": "Apple iPhone 14 Pro (128GB, Space Black)",
+    "department": "Mobile Phones",
+    "brand": "Apple",
+    "description": "Apple iPhone 14 Pro (128GB, Space Black)",
+    "color": "Space Black",
+    "price": 129900
+  },
+  {
+    "code": "33",
+    "name": "Apple iPhone 14 (128GB, Red)",
+    "department": "Mobile Phones",
+    "brand": "Apple",
+    "description": "Apple iPhone 14 (128GB, Red)",
+    "color": "Red",
+    "price": 79900
+  },
+  {
+    "code": "34",
+    "name": "Apple iPhone 14 (128GB, Purple)",
+    "department": "Mobile Phones",
+    "brand": "Apple",
+    "description": "Apple iPhone 14 (128GB, Purple)",
+    "color": "Purple",
+    "price": 79900
+  },
+  {
+    "code": "35",
+    "name": "Apple iPhone 14 (128GB, Starlight)",
+    "department": "Mobile Phones",
+    "brand": "Apple",
+    "description": "Apple iPhone 14 (128GB, Starlight)",
+    "color": "Starlight",
+    "price": 79900
+  },
+  {
+    "code": "36",
+    "name": "Apple iPhone SE (128GB, Red)",
+    "department": "Mobile Phones",
+    "brand": "Apple",
+    "description": "Apple iPhone SE (128GB, Red)",
+    "color": "Red",
+    "price": 48900
+  },
+  {
+    "code": "37",
+    "name": "Spigen Liquid Air Back Cover Case for iPhone 14 Pro Max (TPU | Matte Black)",
+    "department": "Mobile Cases & Covers",
+    "brand": "Spigen",
+    "description": "Spigen Liquid Air Back Cover Case for iPhone 14 Pro Max (TPU | Matte Black)",
+    "color": "Matte Black",
+    "price": 1299
+  },
+  {
+    "code": "38",
+    "name": "Spigen Air Skin Back Cover Case for iPhone 14 Pro Max (Poly Carbonate | Matte Gray)",
+    "department": "Mobile Cases & Covers",
+    "brand": "Spigen",
+    "description": "Spigen Air Skin Back Cover Case for iPhone 14 Pro Max (Poly Carbonate | Matte Gray)",
+    "color": "Matte Gray",
+    "price": 1199
+  },
+  {
+    "code": "39",
+    "name": "CASEOLOGY by Spigen Parallax Mag Back Cover Case Compatible For iPhone 14 Pro (TPU and Polycarbonate | Matte Black)",
+    "department": "Mobile Cases & Covers",
+    "brand": "CASEOLOGY",
+    "description": "CASEOLOGY by Spigen Parallax Mag Back Cover Case Compatible For iPhone 14 Pro (TPU and Polycarbonate | Matte Black)",
+    "color": "Matte Black",
+    "price": 2399
+  },
+  {
+    "code": "40",
+    "name": "Sigma 150-600 mm f/5-6.3 DG OS HSM Contemporary Lens for Canon Cameras (745101, Black)",
+    "department": "Camera Lenses",
+    "brand": "Sigma",
+    "description": "Sigma 150-600 mm f/5-6.3 DG OS HSM Contemporary Lens for Canon Cameras (745101, Black)",
+    "color": "Black",
+    "price": 81490
   }
 ]
