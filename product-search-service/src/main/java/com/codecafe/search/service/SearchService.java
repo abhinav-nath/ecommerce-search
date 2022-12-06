@@ -28,6 +28,13 @@ public class SearchService {
   private final ModelMapper modelMapper;
 
   public TextSearchResponse performTextSearch(String query, List<FacetData> filters, int page, int pageSize) {
+    testSaveSearchFilter();
+    SearchResult searchResult = searchRepository.searchProducts(query, filters, page, pageSize);
+    log.info("Total search results returned: {}", searchResult.getTotalResults());
+    return searchResult.toSearchResponse(modelMapper);
+  }
+
+  private void testSaveSearchFilter() {
     SearchFilter searchFilter = SearchFilter.builder()
                                             .searchFilter("hello")
                                             .searchField("world")
@@ -40,10 +47,6 @@ public class SearchService {
       Optional<SearchFilter> retrievedSearchFilter = searchFilterRepository.findById("hello");
       retrievedSearchFilter.ifPresent(f -> log.info("Successfully retrieved SearchFilter {}:{}", f.getSearchFilter(), f.getSearchField()));
     }
-
-    SearchResult searchResult = searchRepository.searchProducts(query, filters, page, pageSize);
-    log.info("Total search results returned: {}", searchResult.getTotalResults());
-    return searchResult.toSearchResponse(modelMapper);
   }
 
 }

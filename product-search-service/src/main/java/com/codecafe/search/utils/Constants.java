@@ -4,6 +4,7 @@ public class Constants {
 
   public static final String PARAM_FROM = "from";
   public static final String PARAM_SIZE = "size";
+  public static final String PARAM_PRE_PROCESSING_FILTERS = "preProcessingFilters";
   public static final String PARAM_QUERY_STRING = "queryString";
   public static final String PARAM_AGGREGATIONS = "aggregations";
   public static final String PARAM_FILTERS = "filters";

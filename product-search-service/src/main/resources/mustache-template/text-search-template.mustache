@@ -4,6 +4,7 @@
   "query": {
     "bool": {
       "filter": [
+        {{& preProcessingFilters}}
         {
           "exists": {
             "field": "name"

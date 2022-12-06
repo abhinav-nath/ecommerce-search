@@ -14,12 +14,15 @@ import static com.codecafe.search.utils.Constants.PARAM_FACETS_SIZE;
 import static com.codecafe.search.utils.Constants.PARAM_FILTERS;
 import static com.codecafe.search.utils.Constants.PARAM_FROM;
 import static com.codecafe.search.utils.Constants.PARAM_FUZZINESS_VALUE;
+import static com.codecafe.search.utils.Constants.PARAM_PRE_PROCESSING_FILTERS;
 import static com.codecafe.search.utils.Constants.PARAM_QUERY_STRING;
 import static com.codecafe.search.utils.Constants.PARAM_SIZE;
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
 @Component
 public class SearchTemplateParamsBuilder {
 
+  private final QueryPreProcessor queryPreProcessor;
   private final FacetsBuilder facetsBuilder;
 
   @Value("${app.search.facets-size}")
@@ -31,13 +34,18 @@ public class SearchTemplateParamsBuilder {
   @Value("${app.search.fuzzinessValue}")
   private String fuzzinessValue;
 
-  public SearchTemplateParamsBuilder(FacetsBuilder facetsBuilder) {
+  public SearchTemplateParamsBuilder(QueryPreProcessor queryPreProcessor, FacetsBuilder facetsBuilder) {
+    this.queryPreProcessor = queryPreProcessor;
     this.facetsBuilder = facetsBuilder;
   }
 
   public Map<String, Object> buildTextSearchParams(String query, List<FacetData> filters, int page, int pageSize) {
     Map<String, Object> params = new HashMap<>(queryBoostFields);
 
+    String preProcessingFilters = queryPreProcessor.getPreProcessingFilters(query);
+    if (isNotEmpty(preProcessingFilters)) {
+      params.put(PARAM_PRE_PROCESSING_FILTERS, preProcessingFilters);
+    }
     params.put(PARAM_QUERY_STRING, query);
     addPaginationParams(page, pageSize, params);
     addAggregationParams(filters, params);
