@@ -38,9 +38,6 @@ app:
                             brandBoost:25.0,
                             departmentBoost:25.0
                           }'
-    rules:
-      "apple=>FILTER:department=Mobile Phones",
-      "apple=>FILTER:department=Mobile Phones"
   opensearch:
     username: ${OPENSEARCH_USERNAME}
     host: localhost
