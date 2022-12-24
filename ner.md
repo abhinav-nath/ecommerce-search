@@ -17,3 +17,9 @@ For example, in the query `Calvin Klein shoes`, the NER model may identify `Calv
 
 Similarly, in the query `brown shoe polish`, `shoe polish` should be extracted as one compound entity, which is the product type here.
 If the entity isn't recognized as a compound token, results may contain `shoes`, `nail polish`, or anything that matches the individual keyword.
+
+Entity extraction plays a key role in identifying the phrases and avoiding possible irrelevant results for the end shopper.
+
+NER is the initial step in the search algorithm.
+The entity extraction model finds the significance of words in a search query to understand the users' intent concerning a specific product catalog while using historical data points.
+Then further algorithms are applied to this query.
