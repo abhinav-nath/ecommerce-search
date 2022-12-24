@@ -8,7 +8,7 @@ Here the product attributes, or features are the `latest`, `black`, `plaid`, and
 The output of NER may be `latest black_color plaid_pattern sweater_dress_category_type`; where `color`, `pattern`, and `category_type` are the predefined categories, and `black`, `plaid`, and `sweater dress` are their values.
 
 <div align="center">
-  <img src="images/ner.png" width="400"/>
+  <img src="../images/ner.png" width="400"/>
 </div>
 
 In this process, the NER algorithm extracted the entities' `black`, `plaid`, and `sweater dress` and put them into their respective categories.
