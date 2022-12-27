@@ -28,7 +28,14 @@ Then further algorithms are applied to this query.
 
 ### [spaCy](https://spacy.io/models/)
 
-This NER model uses a transition learning model coupled with Convoluted Neural Networks (CNN).
+This NER model uses a transition learning model coupled with **Convoluted Neural Networks (CNN)**.
 In this model, the input query passes through multiple states, where a decision is made at each state to generate the label for that state.
 As it is a neural network-based solution, the model takes a significant time to train, and the performance of the model was lower than other approaches.
-The python based free and open-source NLP library SpaCy is used for this model. So for a sample query, `Lenovo mouse`, spaCy would predict `Lenovo` as the **brand** or **company** and `mouse` as the **product**.
+The python based free and open-source NLP library spaCy is used for this model.
+So for a sample query, `Lenovo mouse`, spaCy would predict `Lenovo` as the **brand** or **company** and `mouse` as the **product**.
+
+### [Stanford core NLP NER tagger](https://nlp.stanford.edu/software/CRF-NER.html)
+
+This Java implementation of NER uses **Conditional Random Fields (CRF)**, and thus it is also known as **CRFClassifier**.
+The model maximizes the conditional probability of tagging the entire query as per the training data.
+Since the CRF models try to maximize conditional tagging, the recall is less unless we have huge datasets.
