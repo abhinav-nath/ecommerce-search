@@ -39,3 +39,8 @@ So for a sample query, `Lenovo mouse`, spaCy would predict `Lenovo` as the **bra
 This Java implementation of NER uses **Conditional Random Fields (CRF)**, and thus it is also known as **CRFClassifier**.
 The model maximizes the conditional probability of tagging the entire query as per the training data.
 Since the CRF models try to maximize conditional tagging, the recall is less unless we have huge datasets.
+
+### [Stanford MaxEnt POS Tagger](https://nlp.stanford.edu/software/tagger.html)
+
+This model uses a maximum entropy-based tagger and is similar to the CRF.
+Though this model tags the query more liberally (hence the maximum entropy), causing some biased tagging, it has a high recall.
