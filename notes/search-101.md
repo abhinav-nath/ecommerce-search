@@ -1,5 +1,13 @@
 # Search 101
 
+A search engine is nothing more than a sophisticated token-matching system and document-ranking system.
+
+## Scoring
+
+A term's frequency (TF) counts how often the search term occurs in the document.
+Document frequency counts how many documents with the term occur across the whole corpus (IDF being its inverse).
+Together these factors work to score search relevance for matched text.
+
 ## Recall and Precision
 
 The **recall** is the ratio of "the number of relevant products retrieved" to "the number of relevant products in the catalog".
