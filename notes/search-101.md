@@ -10,6 +10,8 @@ Together these factors work to score search relevance for matched text.
 
 ## Recall and Precision
 
+<img width="400" alt="image" src="../images/precision-and-recall.png">
+
 The **recall** is the ratio of "the number of relevant products retrieved" to "the number of relevant products in the catalog".
 
 **Precision** is the ratio of "the number of relevant products retrieved" to "the total number of products retrieved".
