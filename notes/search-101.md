@@ -12,9 +12,11 @@ Together these factors work to score search relevance for matched text.
 
 ![image](https://user-images.githubusercontent.com/48696735/212393718-8fe00213-1bb6-4f29-91fc-823cf46538c2.png)
 
-The **recall** is the ratio of "the number of relevant products retrieved" to "the number of relevant products in the catalog".
-
 **Precision** is the ratio of "the number of relevant products retrieved" to "the total number of products retrieved".
+You can think of **precision** as the number of relevant documents (i.e. search results) your search engine retrieves out of all the retrieved documents for a particular search query.
+
+The **recall** is the ratio of "the number of relevant products retrieved" to "the number of relevant products in the catalog".
+You can think of **recall** as the number of relevant documents your search engine retrieves out of all relevant documents possible to retrieve.
 
 Essentially, high precision implies that an algorithm returned a higher number of relevant results, while high recall means that the model returned most of the relevant results.
 For the search query `blue jeans`, if the catalog has 100 relevant products and the search retrieves 160 products out of which 80 are relevant, then recall is 80/100 = 0.8.
